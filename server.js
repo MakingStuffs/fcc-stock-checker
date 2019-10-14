@@ -14,11 +14,11 @@ const app = express();
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
   directives: {
-    defaultSrc: ["'self'"],
+    defaultSrc: ["'self'", "cdnjs.cloudflare.com"],
     imgSrc: ["'self'", "hyperdev.com", "glitch.com"],
     scriptSrc: ["'self'", "code.jquery.com", "'unsafe-inline'"],
     sandbox: ['allow-forms', 'allow-scripts'],
-    styleSrc: ["'self'", "'unsafe-inline'"]
+    styleSrc: ["'self'","cdnjs.cloudflare.com", "'unsafe-inline'"]
   }
 }));
 app.use('/public', express.static(process.cwd() + '/public'));

@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./public/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="container">
@@ -32,7 +33,7 @@
               placeholder="goog"
               required=""
             />
-            <input type="checkbox" name="like" value="true" default="false"/> Like?
+            <input type="checkbox" name="like" value="true" default="false"/>
             <button type="submit">Get Price!</button>
           </form>
         </div>
@@ -51,7 +52,7 @@
               placeholder="msft"
               required=""
             />
-            <input type="checkbox" name="like" value="true" /> Like both?<br />
+            <input type="checkbox" name="like" value="true" />
             <button type="submit">Get Price!</button>
           </form>
         </div>
@@ -110,6 +111,12 @@
         crossorigin="anonymous"
       ></script>
       <script>
+        const likeBtns = document.querySelectorAll('input[name="like"]');
+          likeBtns.forEach(function(btn) {
+            btn.addEventListener('click', function(){
+              this.classList.toggle('active');
+            });
+          }, this);
           $("#testForm").submit(function(event) {
             event.preventDefault();
             $.ajax({

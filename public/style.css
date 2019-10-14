@@ -46,11 +46,25 @@ input:focus, button:focus {
   outline: none;
   box-shadow: 0px 0px 2px 1px black;
 }
-input[type="checkbox"]{
-  appearance: checkbox;
-  -webkit-appearance:checkbox;
+input[type="checkbox"] {
+    background-color: #F7D4E3;
+    color: #E771A2;
+}
+input[type="checkbox"]::before {
+  height:2.7rem;
   padding:0.6rem !important;
   font-size: 1.5rem !important;
+  content:'\f004';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color:inherit;
+}
+input[type="checkbox"]:hover {
+  cursor: pointer !important;
+}
+.active {
+  background-color: #E771A2 !important;
+  color: #F7D4E3 !important;
 }
 .form-container {
   max-width: 45%;
